@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html >
+<html>
+<head>
+    <title>My pool doctor login</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pool | </title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+        <meta name="robots" content="index, follow">
+        <meta name="title" content="">
+        <meta property="og:title" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+        <link rel="stylesheet" href="/css/style.css?v=">
+        <script type="text/javascript">
+
+            function try_login() {
+                var name = document.querySelector('#input-username').value;
+                var pass = document.querySelector('#input-password').value;
+
+                var request = new XMLHttpRequest();
+                request.open('POST', '#', true);
+                request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+                request.send('login_name=' + name + '&login_pw=' + pass);
+                request.onload = function () {
+                    if (request.responseText.search('login-page') == -1) {
+                        window.location.reload(true);
+                    } else {
+                        alert('Chyba přihlašování!');
+                    }
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', function(event){
+
+                document.querySelector('.login-register').addEventListener('click', function(e){
+                    e.preventDefault();
+                    document.querySelector('.register__inner').classList.add('visible');
+                    document.querySelector('.login__inner').classList.remove('visible');
+                })
+
+                document.querySelector('.login-login').addEventListener('click', function(e){
+                    e.preventDefault();
+                    document.querySelector('.register__inner').classList.remove('visible');
+                    document.querySelector('.login__inner').classList.add('visible');
+                })
+
+                document.querySelector('.login-button').addEventListener('click', function(e){
+                    e.preventDefault();
+                    try_login();
+                })
+
+                document.addEventListener('keypress', function (e) {
+                    if(e.which == 13) {
+                        try_login();
+                    }
+                })
+            });
+
+        </script>
+    </head>
+<body class="login-page">
+<div class="login">
+    <div class="login__inner visible">
+        <div class="content__row">
+            <input id="input-username" placeholder="Nickname" type="text" class="input" value=""/>
+            <input id="input-password" placeholder="Password" type="password" class="input" value=""/>
+        </div>
+        <div class="button login-button">Login</div>
+        <div class="login-link login-register">Register</div>
+    </div>
+    <div class="login__inner register__inner">
+        <div class="content__row">
+            <input id="register-name" placeholder="Name" type="text" class="input" value=""/>
+            <input id="register-username" placeholder="Nickname" type="text" class="input" value=""/>
+            <input id="register-password" placeholder="Password" type="password" class="input" value=""/>
+            <input id="register-password2" placeholder="Confirm password" type="password" class="input" value=""/>
+        </div>
+        <div class="button login-button">Register</div>
+        <div class="login-link login-login">login</div>
+    </div>
+</div>
+</body>
+</html>

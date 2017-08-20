@@ -1,0 +1,47 @@
+.table
+    border: 1px solid #e5e5e6
+    +fz(0)
+    +lh(0)
+
+    &__header
+        .table__row
+            background: $color-blue
+            border-color: darken($color-blue, 10%)
+            &:hover
+                background: $color-blue
+
+        .table__col
+            +fz(16)
+            border-color: darken($color-blue, 10%)
+            color: $white
+            +lh(30)
+
+    &__row
+        display: block
+        width: 100%
+        border-bottom: 1px solid #efefef
+        transition: .5s
+        &:last-child
+            border-bottom: 0
+
+        &:hover
+            background: #e5e5e6
+
+        &--darker
+            background: #f1f1f1
+
+    &__col
+        +font-roboto-cond
+        display: inline-block
+        padding: 8px 10px
+        border-right: 1px solid #e5e5e5
+        text-overflow: ellipsis
+        white-space: nowrap
+        overflow: hidden
+
+        +fz(14)
+        +lh(20)
+
+        &:last-child
+            border-right: 0
+

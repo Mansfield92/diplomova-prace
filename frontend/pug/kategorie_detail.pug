@@ -1,0 +1,30 @@
+extends includes/layout
+
+block title
+    title Problémy
+
+block content
+    .content__wrapper
+        a.link-back ← Zpět na přehled problémů
+
+        .content__headline Bílá voda
+        .content__inside
+            .content__row
+                .content__column.content__column--6
+                    .label Název kategorie
+                    input.input.input--edit(id="name" type="text" placeholder="Název kategorie")
+
+            .content__row
+                .label Produkty
+                .select
+                    select(multiple="multiple" style="width: 100%")
+                        - var n = 0;
+                        while n < 20
+                            option(value=++n) Alabama - #{n}
+
+            .content__row
+                .button.button--confirm Uložit změny
+
+
+block append vars
+    - var body = 'products'

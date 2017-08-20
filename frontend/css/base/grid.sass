@@ -1,0 +1,26 @@
+/*==========================================================================
+  Grid
+  ==========================================================================*/
+
+%container
+    position: relative
+    margin: 0 auto
+    width: 100%
+    max-width: 1000px
+
+.container
+    @extend %container
+
+.container--fluid
+    padding: 0 15px
+    margin: auto
+
+.content
+    padding: 0 20px
+
+    +bp($tablet)
+        padding: 0 30px
+
+@for $i from 1 through 12
+    .col--#{$i}, table.col--#{$i}
+        width: calc((100% / (12 / #{$i})) )

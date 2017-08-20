@@ -1,0 +1,40 @@
+extends includes/layout
+
+block title
+    title Components
+
+block content
+
+    .infobar.inforbar--success
+        .infobar__inner
+            .infobar__close
+            .infobar__header Tohle je uspesna hlaska
+            .infobar__content A tady nejake kecy okolo
+
+    .infobar.inforbar--fail
+        .infobar__inner
+            .infobar__close
+            .infobar__header Tohle je uspesna hlaska
+            .infobar__content A tady nejake kecy okolo
+
+
+    .popup__overlay.active
+        .popup
+            .popup__inner
+                .popup__close
+                .popup__headline Název
+                .popup__content
+                    .popup__form
+                        .popup__form__row
+                            .popup__form__item__label This is label for something
+                            input.popup__form__item(type="text" placeholder="kategorie")
+
+                .popup__controls
+                    .button.popup__cancel.button--confirm Ok
+                    .button.popup__confirm.button--cancel Zrušit
+
+
+
+
+block append vars
+    - var body = 'components'

@@ -1,0 +1,130 @@
+.popup
+    max-width: 100vw
+    margin: 0 auto
+    background: $color-light-blue
+    width: 480px
+
+    &--wider
+        width: 768px
+
+    &--wide
+        width: 1024px
+
+.popup__inner
+    position: relative
+
+.popup__overlay
+    text-align: center
+    display: none
+    position: fixed
+    align-items: center
+    left: 0
+    top: 0
+    width: 100vw
+    height: 100vh
+    background: rgba(0, 0, 0, .8)
+    z-index: 999
+    padding: 20px
+
+    &.active
+        display: flex
+
+.popup__headline
+    background: $color-blue
+    padding: 10px
+    +fz(20)
+    font-weight: bold
+    color: $white
+
+.popup__content
+    background: $white
+    padding: 15px 15px 0
+
+.popup__controls
+    background: lighten($color-blue, 10%)
+    padding: 15px
+    border-top: 1px solid #ddd
+    +fz(0)
+    line-height: 0
+
+    .button
+        width: auto
+        margin: 5px 5px 0 0
+
+.popup__close
+    display: block
+    width: 16px
+    height: 16px
+    position: absolute
+    right: 5px
+    top: 5px
+    cursor: pointer
+    //background: #fd0000
+    transition: .5s
+
+    &:hover
+        &:before
+            transform: rotate(45deg)
+        &:after
+            transform: rotate(-45deg)
+
+    &:before, &:after
+        display: block
+        position: absolute
+        content: ""
+        width: 20px
+        height: 2px
+        background: $white
+        transform-origin: 50% 50%
+        top: 10px
+        right: 0
+        transition: .5s
+
+    &:before
+        transform: rotate(-45deg)
+
+    &:after
+        transform: rotate(45deg)
+
+.popup__form__row
+    padding-bottom: 15px
+    +fz(0)
+    +lh(0)
+
+input.popup__form__item
+    width: 100%
+    border: 1px solid #ddd
+    padding: 10px 20px
+    margin-top: 5px
+    outline: none
+    box-shadow: none
+    +fz(16)
+
+    &:focus
+        border: 1px solid $color-light-blue
+
+.popup__form__item__label
+    width: 100%
+    position: relative
+    +fz(14)
+    +lh(20)
+
+.popup__form__headline
+    width: 100%
+    position: relative
+    +fz(20)
+    +lh(30)
+    //font-weight: bold
+
+.popup--wider, .popup--wide
+    +tablet
+        .popup__form__item, .popup__form__item__label
+            display: inline-block
+            vertical-align: middle
+
+        .popup__form__item
+            width: calc(100% - 200px)
+
+        .popup__form__item__label
+            width: 200px
+            padding-right: 10px

@@ -1,0 +1,110 @@
+.content__row
+    padding-bottom: 20px
+    +fz(0)
+    +lh(0)
+
+    &--error
+        color: $color-fail
+        +fz(14)
+        +lh(20)
+
+    &:last-child
+        padding-bottom: 0
+
+    &--header
+        border-bottom: 1px solid #ddd
+        margin-bottom: 15px
+
+.content__wrapper
+    height: 100%
+    width: 100%
+    padding: 20px
+    text-align: left
+    overflow: scroll
+
+    +tablet
+        padding: 30px
+
+.content__inside
+    background: #fff
+    text-align: left
+    border: 1px solid #e5e5e5
+    padding: 10px
+    //min-width: 600px
+
+    .body-products &
+        min-width: 525px
+
+    +tablet
+        padding: 20px
+
+.content__headline
+    +font-roboto-cond
+    +fz(32)
+    text-align: left
+    padding-bottom: 10px
+
+.content__filter
+    display: block
+    width: 100%
+    padding: 10px 20px
+    border: 1px solid #ddd
+    box-shadow: none
+    outline: none
+    +fz(16)
+    +lh(20)
+
+    &:focus
+        border-color: $color-light-blue
+
+
+.content__column
+    margin-top: 10px
+    vertical-align: top
+    overflow: hidden
+
+    +tablet
+        & + .content__column
+            padding-left: 10px
+
+    +tablet
+        margin-top: 0
+
+
+@for $i from 1 through 12
+    .content__column--#{$i}
+        +tablet
+            display: inline-block
+            width: calc((100% / (12 / #{$i})) )
+
+//#content
+.label
+    font-weight: bold
+    +fz(14)
+    +lh(20)
+
+.value
+    +fz(16)
+    +lh(20)
+    padding: 10px 20px
+
+.input
+    width: 100%
+    border: 1px solid #ddd
+    outline: none
+    box-shadow: none
+    +fz(16)
+    +lh(16)
+    padding: 10px 20px
+    margin-top: 1px
+
+    &:focus
+        border-color: $color-light-blue
+
+.select
+    +fz(14)
+    +lh(20)
+
+
+textarea
+    resize: vertical

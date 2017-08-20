@@ -1,0 +1,27 @@
+extends includes/layout
+
+block title
+    title Uživatelé
+
+block content
+    .content__wrapper
+        .content__headline Uživatelé
+        .content__inside
+
+            .content__row
+                input.content__filter(type="text" placeholder="Filtrování uživatelů")
+
+            .content__row
+                .table
+                    .table__header
+                        .table__row
+                            .table__col.col--2 Nick
+                            .table__col.col--3 Jméno
+                            .table__col.col--4 Registrace
+                            .table__col.col--3 Aktivní
+
+                    a.table__row.filter(href="/users/id" data-search="Mansfield Petr Vomáčko")
+                        .table__col.col--2 Mansfield
+                        .table__col.col--3 Petr Vomáčko
+                        .table__col.col--4 18. 6. 2017
+                        .table__col.col--3 Ano

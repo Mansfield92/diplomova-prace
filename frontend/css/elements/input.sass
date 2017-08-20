@@ -1,0 +1,77 @@
+.radiogroup
+    +fz(0)
+    +lh(0)
+    label
+        +fz(17)
+        +lh(20)
+
+    &__item
+        display: inline-block
+        vertical-align: middle
+
+    label
+        display: inline-block
+        padding-right: 15px
+        vertical-align: middle
+
+    input
+        display: inline-block
+        vertical-align: middle
+
+    input[type="radio"],
+    input[type="checkbox"]
+        /* hide the inputs */
+        opacity: 0
+        position: absolute
+
+    input[type="radio"] + label,
+    input[type="checkbox"] + label
+        /* keep pointer so that you get the little hand showing when you are on a button */
+        cursor: pointer
+        /* the following are the styles */
+        padding: 13px 30px
+        background: $color-blue
+        border: none
+        color: rgba(255,255,255,0.9)
+        transform: translateZ(0px)
+        transition: .3s
+        +fz(14)
+        +lh(14)
+        margin-right: 1px
+        margin-top: 1px
+
+        +tablet
+            &:hover
+                text-decoration: none
+                &:before
+                    transform: scaleX(1)
+
+        &:before
+            background: $color-success none repeat scroll 0 0
+            bottom: 0
+            left: 0
+            right: 0
+            top: 0
+            content: ""
+            position: absolute
+            z-index: -1
+            transform: scaleX(0)
+            transform-origin: 0 50%
+            transition: 0.3s transform ease-out
+    
+    input[type="radio"]:checked + label,
+    input[type="checkbox"]:checked + label
+        /* style for the checked/selected state */
+        background: $color-light-blue
+        color: $white
+
+    input[type="checkbox"]:checked + label
+        &:before
+            background-color: $color-fail
+
+    input[type="radio"]:checked + label
+        &:before
+            background-color: $color-light-blue
+
+input.error, .input.error
+    border-color: $color-fail !important

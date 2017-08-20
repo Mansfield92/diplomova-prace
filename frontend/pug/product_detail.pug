@@ -1,0 +1,47 @@
+extends includes/layout
+
+block title
+    title Products
+
+block content
+    .content__wrapper
+        a.link-back ← Zpět na přehled produktů
+
+        .content__headline Vodnar
+        .content__inside
+            .content__row.content__row--header
+                .content__column.content__column--6
+                    .label Název
+                    .value M+H Vodnář Na řasy 3l
+                .content__column.content__column--4
+                    .label ID
+                    .value 20-00-052
+                .content__column.content__column--2
+                    .label Cena
+                    .value 566 Kč
+            .content__row
+                .label Popis
+                input.input.input--edit(id="description" type="text" placeholder="Popis")
+
+            .content__row
+                .content__column.content__column--6
+                    .label Jednotky
+                    input.input.input--edit(id="units" type="text" placeholder="Jednotky")
+                .content__column.content__column--6
+                    .label Velikost balení (jednotek)
+                    input.input.input--edit(id="size" type="text" placeholder="Velikost balení")
+
+            .content__row
+                .content__column.content__column--6
+                    .label Objem vody (v m3), na který je určeno celé balení:
+                    input.input.input--edit(id="volume" type="text" placeholder="Objem")
+                .content__column.content__column--6
+                    .label Interval dávkování (dny):
+                    input.input.input--edit(id="interval" type="text" placeholder="Interval dávkování")
+
+            .content__row
+                .button.button--confirm Uložit změny
+
+
+block append vars
+    - var body = 'products'

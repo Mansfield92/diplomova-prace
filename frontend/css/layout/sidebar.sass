@@ -1,0 +1,77 @@
+
+.sidebar
+    background: $color-blue
+    +fz(18)
+    z-index: 5
+    position: absolute
+    left: -250px
+    transition: .5s
+    width: 250px
+    height: 100%
+
+    &.active
+        left: 0
+
+    +tablet
+        position: relative
+        float: left
+        left: 0
+
+.sidebar__brand
+    color: $color-gray
+    width: 455px
+    line-height: 60px
+    height: 60px
+    padding: 0
+    width: 100%
+    overflow: hidden
+    +font-roboto-cond
+    background: $color-light-blue
+    text-align: left
+
+.sidebar__title
+    display: inline-block
+    margin-left: -10px
+    
+.navigation
+    text-align: left
+    +fz(14)
+    
+.navigation__item
+    display: block
+    width: 100%
+    overflow: hidden
+
+    a
+        +font-roboto-cond
+        padding: 0 10px 0 10px
+        height: 46px
+        line-height: 46px
+        display: block
+        white-space: nowrap
+        color: $white
+
+    .icon
+        margin-left: 0px
+        width: 38px
+        text-align: center
+        font-size: 1.1em
+        display: inline-block
+        
+    .navigation__item__title
+        width: 0px
+        white-space: nowrap
+        padding-left: 6px
+
+    &:hover
+        a
+            color: $color-light-blue
+        
+    &.active
+        a
+            color: #353d47
+            border-left: 3px solid $color-light-blue
+            border-right: 0px solid $color-light-blue
+            background-color: $white
+        .icon
+            margin-left: -3px

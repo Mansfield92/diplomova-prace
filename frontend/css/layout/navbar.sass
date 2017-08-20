@@ -1,0 +1,109 @@
+.navbar
+    display: block
+    position: fixed
+    left: 0
+    right: 0
+    top: 0
+    padding-left: 250px
+    background: $color-blue
+    height: 60px
+    z-index: 4
+
+.navbar-expand-toggle
+    display: block
+    background: transparent
+    position: absolute
+    left: 100%
+    top: 17px
+    border: none
+    cursor: pointer
+    transition: .5s
+
+    +tablet
+        display: none
+
+    .opened
+        display: none
+
+    .closed
+        display: inline-block
+
+    &.active
+        left: calc(100% - 55px)
+        .icon
+            color: $color-blue
+
+        .opened
+            display: inline-block
+
+        .closed
+            display: none
+
+    .icon
+        color: $color-light-blue
+
+
+//.profile
+//    display: none
+
+.navbar-right
+    display: block
+    float: right
+    margin-right: -20px
+    height: 60px
+
+.profile
+    position: relative
+    //overflow: hidden
+    padding-right: 20px
+    height: 100%
+    line-height: 60px
+    color: $white
+
+    &-toggle
+        position: relative
+        white-space: nowrap
+
+        &:before
+            display: block
+            position: absolute
+            content: ""
+            left: 0
+            top: 40px
+            width: 0
+            height: 1px
+            background: $color-light-blue
+            transition: .5s
+
+    &:hover
+        .profile-toggle:before
+            width: 100%
+
+    &.active
+        .profile__content
+            transform: translateX(0)
+
+    &__content
+        transform: translateX(100%)
+        width: 250px
+        position: absolute
+        display: block
+        right: 0
+        top: 60px
+        text-align: center
+        background: $white
+        border: 1px solid $color-blue
+        border-top: none
+        transition: .5s
+        color: $black
+        line-height: 1.1
+
+        .button
+            margin: 10px 0 0 0
+
+            & + .button
+                margin: 10px 0 0 0
+
+
+    &__info
+        padding: 20px

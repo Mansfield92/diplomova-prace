@@ -1,0 +1,102 @@
+extends includes/layout
+
+block title
+    title Problémy
+
+block content
+    .content__wrapper
+        a.link-back ← Zpět na přehled problémů
+
+        .content__headline Bílá voda
+        .content__inside
+            .content__row
+                .label Překlady
+                .tabs
+                    .tabs__nav
+                        .active.tabs__nav__item(data-toggle="tab-1") CS
+                        .tabs__nav__item(data-toggle="tab-2") EN
+                        .tabs__nav__item(data-toggle="tab-3") DE
+                        .tabs__nav__item(data-toggle="tab-4") RU
+
+                    .tab.active(id="tab-1")
+                        .tab__content
+                            .content__row
+                                .content__column.content__column--6
+                                    .label Název
+                                    input.input.input--edit(id="name-cs" type="text" placeholder="Název")
+                            .content__row
+                                .content__column.content__column--12
+                                    .label Popis
+                                    textarea.input.input--edit(id="description-cs" type="text" placeholder="Popis")
+                    .tab(id="tab-2")
+                        .tab__content
+                            .content__row
+                                .content__column.content__column--6
+                                    .label Název
+                                    input.input.input--edit(id="name-en" type="text" placeholder="Název")
+                            .content__row
+                                .content__column.content__column--12
+                                    .label Popis
+                                    textarea.input.input--edit(id="description-en" type="text" placeholder="Popis")
+                    .tab(id="tab-3")
+                        .tab__content
+                            .content__row
+                                .content__column.content__column--6
+                                    .label Název
+                                    input.input.input--edit(id="name-de" type="text" placeholder="Název")
+                            .content__row
+                                .content__column.content__column--12
+                                    .label Popis
+                                    textarea.input.input--edit(id="description-de" type="text" placeholder="Popis")
+                    .tab(id="tab-4")
+                        .tab__content
+                            .content__row
+                                .content__column.content__column--6
+                                    .label Název
+                                    input.input.input--edit(id="name-ru" type="text" placeholder="Název")
+                            .content__row
+                                .content__column.content__column--12
+                                    .label Popis
+                                    textarea.input.input--edit(id="description-ru" type="text" placeholder="Popis")
+
+            .content__row.content__row--header
+                .content__column.content__column--6
+                    .label Typ
+                    .radiogroup.radiogroup
+                        .radiogroup__item
+                            input.radio.input--edit(type="radio" name="radio-1" id="radio-1" checked="true")
+                            label(for="radio-1") Pool
+                        .radiogroup__item
+                            input.radio.input--edit(type="radio" name="radio-1" id="radio-2")
+                            label(for="radio-2") Whirlpool
+
+            .content__row
+                .label Nastavení
+                .radiogroup.radiogroup
+                    .radiogroup__item
+                        input.checkbox.input--edit(type="checkbox" name="checkbox-1" id="checkbox-1" checked="true")
+                        label(for="checkbox-1") Je potřeba PH?
+                    .radiogroup__item
+                        input.checkbox.input--edit(type="checkbox" name="checkbox-2" id="checkbox-2")
+                        label(for="checkbox-2") Pro bazény
+                    .radiogroup__item
+                        input.checkbox.input--edit(type="checkbox" name="checkbox-3" id="checkbox-3")
+                        label(for="checkbox-3") Pro vířivky
+
+            .content__row
+                .label Kategorie
+                .select
+                    select(multiple="multiple" style="width: 100%")
+                        option(value="1") Alabama
+                        option(value="2") Pardbuice
+                        option(value="3") Hradec
+                        option(value="4") Praga
+                        option(value="5") Plila
+                        option(value="6") Bagr
+
+            .content__row
+                .button.button--confirm Uložit změny
+
+
+block append vars
+    - var body = 'products'

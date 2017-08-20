@@ -1,0 +1,50 @@
+.login-page
+    background: url("/img/jpg/login.jpg") no-repeat center center
+    background-size: cover
+    display: flex
+    justify-content: center
+    align-items: center
+
+.login
+    width: 100%
+    max-width: 320px
+    position: absolute
+    padding: 0
+    background: $white
+    padding: 20px
+    transition: .5s
+
+    .input
+        margin-bottom: 8px
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075)
+        background: #F9F9F9
+        border: 1px solid #F9F9F9
+        padding: 8px 15px
+        color: #555
+
+        &:last-child
+            margin-bottom: 0
+
+    .button
+        padding: 13px 45px
+        +fz(16)
+
+    .login-link
+        text-decoration: underline
+        +fz(13)
+        color: rgba($color-blue, .7)
+        transition: .5s
+        cursor: pointer
+
+        &:hover
+            color: $color-blue
+
+    &__inner
+        max-height: 0
+        transition: 1s ease
+        overflow: hidden
+        transition-delay: .05s
+
+        &.visible
+            max-height: 400px
+            transition-delay: 1s

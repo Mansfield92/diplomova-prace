@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Problémy</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="title" content="">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:url" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="stylesheet" href="/css/style.css">
+    <!--script(type="text/javascript" src="/js/legoHeader.js")-->
+    <!--script(type="text/javascript" crossorigin="anonymous" src="https://lego.com/en-us/go/190/lmcpXXX")-->
+</head>
+
+<body class="problem">
+    <div class="sidebar">
+        <div class="sidebar__header"><a class="sidebar__brand" href="/admin"><span class="icon fa fa-paper-plane"></span>
+          <div class="sidebar__title">Administrace</div></a>
+            <nav class="navigation">
+                <li class="navigation__item"><a href="/admin/kategorie"><span class="icon fa fa-list"></span><span class="navigation__item__title">Kategorie</span></a>
+                </li>
+                <li class="navigation__item"><a href="/admin/produkty"><span class="icon fa fa-cube"></span><span class="navigation__item__title">Produkty</span></a>
+                </li>
+                <li class="navigation__item"><a href="/admin/problemy"><span class="icon fa fa-warning"></span><span class="navigation__item__title">Problémy</span></a><a href="/admin/uzivatele"><span class="icon fa fa-user"></span><span class="navigation__item__title">Uživatelé</span></a>
+                </li>
+            </nav>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container--fluid">
+            <div class="navbar-expand-toggle"><i class="fa fa-bars icon closed"></i><i class="fa fa-close icon opened"></i>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <div class="profile"><a class="dropdown-toggle" href="#"><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="profile__img">
+                            <img class="profile-img" src="/img/avatars/avatar.jpg">
+                        </li>
+                        <li>
+                            <div class="profile-info">
+                                <h4 class="username">Petr</h4>
+                                <button class="btn btn-default" type="button"><i class="fa fa-user">Profile</i>
+                                </button>
+                                <button class="btn btn-default btn-logout" type="button"><i class="fa fa-sign-out">Logout</i>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    <section id="content">
+        <div class="content__wrapper">
+            <div class="content__headline">Problémy</div>
+            <div class="content__inside">
+                <div class="content__row">
+                    <div class="button">Přidat problém</div>
+                </div>
+                <div class="content__row">
+                    <input class="content__filter" type="text" placeholder="Filtrování problémů">
+                </div>
+                <div class="content__row">
+                    <div class="table">
+                        <div class="table__header">
+                            <div class="table__row">
+                                <div class="table__col col--12">Název</div>
+                            </div>
+                        </div>
+                        <div class="table__row">
+                            <div class="table__col col--12 filter" data-search="Bílá voda">Bílá voda</div>
+                        </div>
+                        <div class="table__row">
+                            <div class="table__col col--12 filter" data-search="Bílá voda">Bílá voda</div>
+                        </div>
+                        <div class="table__row">
+                            <div class="table__col col--12 filter" data-search="Bílá voda">Bílá voda</div>
+                        </div>
+                        <div class="table__row">
+                            <div class="table__col col--12 filter" data-search="Bílá voda">Bílá voda</div>
+                        </div>
+                        <div class="table__row">
+                            <div class="table__col col--12 filter" data-search="Bílá voda">Bílá voda</div>
+                        </div>
+                        <div class="table__row">
+                            <div class="table__col col--12 filter" data-search="Bílá voda">Bílá voda</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="http://localhost:8080/main.js"></script>
+    <!--script(src="/js/main.js?v=2")-->
+</body>
+
+</html>

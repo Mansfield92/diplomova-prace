@@ -1,0 +1,57 @@
+%basic-btn
+    cursor: pointer
+    +font-roboto-cond
+    padding: 15px 30px
+    background: $color-blue
+    text-decoration: none
+    border: none
+    color: rgba(255,255,255,1)
+    position: relative
+    display: inline-block
+    transform: translateZ(0px)
+    transition: .3s
+    +fz(15)
+    +lh(15)
+    width: 100%
+    text-align: center
+    backface-visibility: hidden
+    margin: 5px 0 0
+    +phone
+        text-align: left
+        width: auto
+        margin: 5px 5px 0 0
+
+
+    +tablet
+        &:hover
+            text-decoration: none
+            &:before
+                transform: scaleX(1)
+
+    &:before
+        background: $color-light-blue none repeat scroll 0 0
+        bottom: 0
+        left: 0
+        right: 0
+        top: 0
+        content: ""
+        position: absolute
+        z-index: -1
+        transform: scaleX(0)
+        transform-origin: 0 50%
+        transition: 0.3s transform ease-out
+        backface-visibility: hidden
+
+.button
+    @extend %basic-btn
+
+    &--confirm:before
+        background: $color-success
+
+    &--cancel:before
+        background: $color-fail
+
+    &--ico
+        .fa
+            &:before
+                padding-right: 5px

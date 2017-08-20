@@ -1,0 +1,43 @@
+extends includes/layout
+
+block title
+    title Detail uživatele
+
+block content
+    .content__wrapper
+        a.link-back ← Zpět na přehled uživatelů
+
+        .content__headline Petr Vomáčko
+        .content__inside
+            .content__row
+
+                .content__column.content__column--6
+                    .label Jméno
+                    input.input.input--edit(id="name" type="text" placeholder="Jméno")
+
+                .content__column.content__column--6
+                    .label Nickname
+                    input.input.input--edit(id="nickname" type="text" placeholder="Nickname")
+
+            .content__row.content__row--header
+                .content__column.content__column--6
+                    .label Aktivní
+                    .radiogroup.radiogroup
+                        .radiogroup__item
+                            input.radio.input--edit(type="radio" name="radio-1" id="radio-1" checked="true")
+                            label(for="radio-1") Ano
+                        .radiogroup__item
+                            input.radio.input--edit(type="radio" name="radio-1" id="radio-2")
+                            label(for="radio-2") Ne
+
+                .content__column.content__column--6
+                    .label Datum registrace
+                    .value 18. 6. 2017
+
+            .content__row
+                .button.button--confirm Uložit změny
+                .button.button--cancel Smazat uživatele
+
+
+block append vars
+    - var body = 'products'

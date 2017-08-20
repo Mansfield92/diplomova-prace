@@ -1,0 +1,133 @@
+RewriteEngine On
+#
+RewriteRule ^$ /login.php
+#RewriteRule ^kontakt$ /web/index.php?page=contact
+#RewriteRule ^produkty$ /web/index.php?page=products
+#RewriteRule ^nas-pribeh$ /web/index.php?page=story
+#RewriteRule ^objednavka$ /web/index.php?page=order
+#RewriteRule ^obchodni-podminky /web/index.php?page=legal
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+#RewriteRule ^admin/info$ /admin/info.php
+
+RewriteRule ^login$ /login.php
+RewriteRule ^([a-zA-z\-]{1,})*$ /_controler.php?page=$1
+RewriteRule ^([a-zA-z\-]{1,})*\/([\d\-]{1,})$ /_controler.php?page=$1&detail=$2
+
+RewriteRule ^api\/([a-zA-z\-]{1,})*$ /_api/index.php?view=$1
+
+#RewriteRule ^mobileAPI\/([a-zA-z\-]{1,})*$ /api/$1.php
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(?!(\/admin))(.*)$ /error.html [NC,L,QSA]
+
+DirectoryIndex index.html index.php
+ErrorDocument 404 /web/templates/_template-error.php?code=404
+ErrorDocument 403 /web/templates/_template-error.php?code=403
+ErrorDocument 500 /web/templates/_template-error.php?code=500
+ErrorDocument 501 /web/templates/_template-error.php?code=501
+ErrorDocument 502 /web/templates/_template-error.php?code=502
+ErrorDocument 503 /web/templates/_template-error.php?code=503
+
+
+<IfModule mod_mime.c>
+    AddType application/font-ttf    ttf
+    AddType application/font-woff   woff
+    AddType font/woff2              woff2
+    AddType image/svg+xml           svg svgz
+    AddEncoding gzip                svgz
+</IfModule>
+<IfModule mod_deflate.c>
+  # force deflate for mangled headers
+  # developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping/
+  <IfModule mod_setenvif.c>
+    <IfModule mod_headers.c>
+      SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+      RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+    </IfModule>
+  </IfModule>
+  # HTML, TXT, CSS, JavaScript, JSON, XML, HTC:
+  <IfVersion < 2.4.4>
+    <IfModule filter_module>
+      FilterDeclare   COMPRESS
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/html
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/css
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/plain
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/xml
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $text/x-component
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/javascript
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/json
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/xml
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/xhtml+xml
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/rss+xml
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/atom+xml
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/vnd.ms-fontobject
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $image/svg+xml
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/font-woff
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/font-ttf
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/x-font-woff
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $application/x-font-ttf
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $font/opentype
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $font/woff2
+      FilterProvider  COMPRESS  DEFLATE resp=Content-Type $font/ttf
+      FilterChain     COMPRESS
+      FilterProtocol  COMPRESS  DEFLATE change=yes;byteranges=no
+    </IfModule>
+  </IfVersion>
+  <IfVersion >= 2.4.4>
+    <IfModule filter_module>
+      FilterDeclare   COMPRESS
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'text/html'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'text/css'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'text/plain'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'text/xml'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'text/x-component'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/javascript'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/json'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/xml'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/xhtml+xml'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/rss+xml'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/atom+xml'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/vnd.ms-fontobject'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'image/svg+xml'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/font-woff'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/x-font-woff'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/font-ttf'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'application/x-font-ttf'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'font/opentype'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'font/woff2'"
+      FilterProvider  COMPRESS  DEFLATE "%{Content_Type} = 'font/ttf'"
+      FilterChain     COMPRESS
+      FilterProtocol  COMPRESS  DEFLATE change=yes;byteranges=no
+    </IfModule>
+  </IfVersion>
+  <IfModule !mod_filter.c>
+    # Legacy versions of Apache
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
+    AddOutputFilterByType DEFLATE application/xhtml+xml application/rss+xml
+    AddOutputFilterByType DEFLATE application/atom+xml
+    AddOutputFilterByType DEFLATE image/svg+xml application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE application/font-woff application/x-font-woff application/font-ttf application/x-font-ttf font/opentype
+  </IfModule>
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html A0
+  ExpiresByType image/gif A3600
+  ExpiresByType image/png A3600
+  ExpiresByType image/jpeg A3600
+  ExpiresByType image/x-icon A2592000
+  ExpiresByType application/vnd.ms-fontobject A2592000
+  ExpiresByType application/javascript A2592000
+  ExpiresByType text/css A2592000
+  ExpiresByType image/svg+xml A3600
+  ExpiresByType application/font-woff A2592000
+  ExpiresByType application/x-font-woff A2592000
+  ExpiresByType application/font-ttf A2592000
+  ExpiresByType application/x-font-ttf A2592000
+  ExpiresByType font/opentype A2592000
+</IfModule>

@@ -1,0 +1,22 @@
+nav.navbar
+    .container--fluid
+        .navbar-expand-toggle
+            i.fa.fa-bars.icon.closed
+            i.fa.fa-close.icon.opened
+
+        ul.nav.navbar-nav.navbar-right
+            .profile
+                a(href="#" class="dropdown-toggle")
+                    span.caret
+
+                ul.dropdown-menu
+                    li.profile__img
+                        img(src="/img/avatars/avatar.jpg" class="profile-img")
+
+                    li
+                        .profile-info
+                            h4.username Petr
+                            button(type="button" class="btn btn-default")
+                                i.fa.fa-user Profile
+                            button(type="button" class="btn btn-default btn-logout")
+                                i.fa.fa-sign-out Logout

@@ -1,0 +1,41 @@
+.tabs
+.tabs__nav
+    +fz(0)
+    +lh(0)
+
+    border-bottom: 1px solid $color-blue
+
+    &__item
+        display: inline-block
+        padding: 10px 20px
+        +fz(16)
+        +lh(20)
+        transition: .5s
+        cursor: pointer
+        border: 1px solid transparent
+        margin-bottom: -1px
+
+        &:hover
+            background: $color-light-blue
+            color: $white
+
+        &.active
+            border: 1px solid $color-blue
+            border-bottom: 1px solid $white
+            &:hover
+                background: $white
+                color: $black
+
+.tab
+    +fz(14)
+    +lh(20)
+    opacity: 0
+    transition: .5s
+    padding: 20px
+    border: 1px solid $color-blue
+    border-top: none
+    display: none
+
+    &.active
+        display: block
+        opacity: 1

@@ -1,0 +1,50 @@
+
+
+.select
+    margin-top: 1px
+    .select2-container .select2-selection--multiple, .select2-container--default .select2-selection--single
+        border-radius: 0
+        min-height: 40px
+
+        .select2-selection__choice
+            border-radius: 0
+            border: none
+            //color: $white
+            padding: 4px 10px
+
+        .select2-selection__rendered
+            line-height: 38px
+            //padding: 0 5px 5px
+
+        .select2-selection__arrow
+            height: 36px
+
+.select2-container
+    .select2-results
+        text-align: left
+        +tablet
+            .select2-results__options
+                display: flex
+                width: 100%
+                flex-direction: row
+                flex-wrap: wrap
+
+    .select2-results__option
+        text-align: center
+        &[aria-selected="true"]
+            display: none
+            .popup__overlay &, .products &
+                display: inline-block
+
+        +tablet
+            width: 50%
+            border: none
+            border-right: 1px solid #f1f1f1
+            border-bottom: 1px solid #f1f1f1
+
+        +desktop
+            width: calc(100% / 3)
+
+        .popup__overlay &, .products &
+            width: 100%
+            border: none

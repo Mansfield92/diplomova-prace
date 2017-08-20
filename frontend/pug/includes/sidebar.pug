@@ -1,0 +1,23 @@
+.sidebar
+    .sidebar__header
+        a.sidebar__brand(href="/admin")
+            span.icon.fa.fa-paper-plane
+            .sidebar__title Administrace
+
+        nav.navigation
+            li.navigation__item
+                a(href="/admin/kategorie")
+                    span.icon.fa.fa-list
+                    span.navigation__item__title Kategorie
+
+            li.navigation__item
+                a(href="/admin/produkty")
+                    span.icon.fa.fa-cube
+                    span.navigation__item__title Produkty
+            li.navigation__item
+                a(href="/admin/problemy")
+                    span.icon.fa.fa-warning
+                    span.navigation__item__title Problémy
+                a(href="/admin/uzivatele")
+                    span.icon.fa.fa-user
+                    span.navigation__item__title Uživatelé
